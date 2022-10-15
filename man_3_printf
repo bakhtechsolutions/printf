@@ -1,46 +1,48 @@
-.\" ALX printf Project Man Page
-.TH printf 1 "April 2022" "Printf Project" "ALX AFRICA"
+.\"Manpage for printf
+.\"
+.TH _printf "April 19 2022" "ALX" "_printf  man page"
+
 .SH NAME
-.P
-_printf() 
+.B _printf - formatted output conversion and print in the screen.
+
 .SH SYNOPSIS
-.P
-_printf() - %[dcisbuxop]
+.B #include "main.h"
+.sp
+.BI "int _printf(const char *format, ...)"
+.ad
+
 .SH DESCRIPTION
-.P
-prints strings to the stdout along with format specifiers for appropriate values
-.SH OPTIONS
-.SS Format Specifiers
-.P
-d - decimal digits
-.P
-c - Characters
-.P
-i - Integers
-.P
-s - Strings
-.P
-b - represents undefined specifiers and would behave just as printf(3)
-.P
-u - Unsigned
-.P
-x - Hexadecimal
-.P
-o - Unsigned Octal
-.P
-p - Addresses
-.SH EXAMPLES
-.RS
-_printf("Some String %s", str);
-format specifier - %s
-str - Some variable of type char *
-.RE
-.SH EXIT VALUES
-.P
-returns 1 if malloc operation is unsuccessful
-.SH AUTHORS
-.P
-Written by \fBABUKA VICTOR\fR and \fBALABI KHALID\fR.
-.SH SEE ALSO
-.P
-MAN printf(3)
+The function prints output on the screen according to the format described below.
+
+.SH RETURN VALUE
+While successful, the function returns the number of characters printed.
+If an error is found, the value returned is -1.
+
+.SH FORMAT OF THE STRING
+The string is a character string, beginning and ending in double quotes,
+composed with ordinary characters which are copied unchanged to the output,
+and conversion specifications introduced by the the character '%'.
+The conversion specification has to match with the corresponding type of the
+variable specified.
+The variables are used in the order given.
+
+.SS c
+The argument passed for specifier '%c' results in a single character printed.
+
+.SS %
+In order to print a '%', the argument passed should be '%%'.
+
+.SS s
+The argument passed is expected to be an array of characters, which are printed
+character by character, not including the terminating NULL byte.
+
+.SS i
+The argyment is converted from integer to character and printed character by character.
+
+:SS d
+Same description as previous.
+
+.SH BUGS
+Not found for now.
+
+.SH AUTHORS Obumneme,Joy
